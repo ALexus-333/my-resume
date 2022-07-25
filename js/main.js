@@ -1,7 +1,6 @@
 $(function() {
-    $(".navigation_list .switch a").on("click", function(e) {
+    $("#switch").on("click", function(e) {
         $(".light_mode").toggleClass("dark_mode");
-        $('.light_body').toggleClass("dark_body");
         e.preventDefault();
     });
 });
@@ -19,3 +18,15 @@ $(function() {
         e.preventDefault();
     });
 });
+
+const themebutton = document.getElementById("switch");
+
+themebutton.onclick = function () {
+    if (document.body.classList.contains("light_body")) {
+        document.getElementById('body').classList.remove('light_body');
+        document.getElementById('body').classList.add('dark_body');  
+    } else {
+        document.getElementById('body').classList.remove('dark_body');
+        document.getElementById('body').classList.add('light_body');
+    }
+}
